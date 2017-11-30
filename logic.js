@@ -4,7 +4,8 @@ const cards = document.querySelectorAll('.card');
 
 cards.forEach((card) => {
   card.addEventListener('click', (event) => {
-    // console.log('hello')
-    
+    card.classList.add('flip-in-ver-right')
+    card.style.background = 'black';
+    card.innerText = '1';
   })
 })
