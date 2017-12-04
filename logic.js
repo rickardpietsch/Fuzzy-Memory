@@ -27,15 +27,25 @@ function newGame(){
   for (var i = 0; i <= ((memoryArray.length)-1); i++) {
   const card = document.createElement("div");
   card.setAttribute("class", "card"); //Style div
-  // card.setAttribute("data-card", 1); //i%8 modulus
   document.querySelector(".frame").append(card);
 
   card.addEventListener('click', (event) => {
     var randomLetter = Math.floor(Math.random() * memoryArray.length);
     card.classList.toggle('flip')
     card.innerText = memoryArray[randomLetter];
-    
+    card.setAttribute("data-card", memoryArray[randomLetter]); //i%8 modulus
 
+    cardsflippedover++; //Lägger på +1 varje varv
+
+    if (cardsflippedover === 2) {
+      let activeCards = document.querySelectorAll('.flip');
+
+        if (activeCards[0].dataset.card === activeCards[1].dataset.card) {
+          activeCards.forEach(card => {
+            card.remove();
+          })
+        }
+    }
     // for (var i = 0; i < 16; i++) {
     // card.setAttribute("data-card", i%8); //i%8 modulus
     // document.querySelector(".frame").append(card);

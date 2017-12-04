@@ -26,28 +26,28 @@ text-align: center;
 background-color: salmon;
 }
 
-.card[data-card='0'] {
+.card[data-card='A'] {
   background-color: blue;
 }
-.card[data-card='1'] {
+.card[data-card='B'] {
   background-color: red;
 }
-.card[data-card='2'] {
+.card[data-card='C'] {
   background-color: green;
 }
-.card[data-card='3'] {
+.card[data-card='D'] {
   background-color: yellow;
 }
-.card[data-card='4'] {
+.card[data-card='E'] {
   background-color: pink;
 }
-.card[data-card='5'] {
+.card[data-card='F'] {
   background-color: orange;
 }
-.card[data-card='6'] {
+.card[data-card='G'] {
   background-color: purple;
 }
-.card[data-card='7'] {
+.card[data-card='H'] {
   background-color: brown;
 }
 
