@@ -24,31 +24,39 @@ width: 180px;
 margin: 5px;
 text-align: center;
 background-color: salmon;
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 50px;
 }
 
-.card[data-card='A'] {
-  background-color: blue;
+/*.card p {
+  opacity: 0;
+}*/
+
+.card.flip[data-card='A'] {
+  /*background-color: blue;*/
 }
-.card[data-card='B'] {
-  background-color: red;
+.card.flip[data-card='B'] {
+  /*background-color: red;*/
 }
-.card[data-card='C'] {
-  background-color: green;
+.card.flip[data-card='C'] {
+  /*background-color: green;*/
 }
-.card[data-card='D'] {
-  background-color: yellow;
+.card.flip[data-card='D'] {
+  /*background-color: yellow;*/
 }
-.card[data-card='E'] {
-  background-color: pink;
+.card.flip[data-card='E'] {
+  /*background-color: pink;*/
 }
-.card[data-card='F'] {
-  background-color: orange;
+.card.flip[data-card='F'] {
+  /*background-color: orange;*/
 }
-.card[data-card='G'] {
-  background-color: purple;
+.card.flip[data-card='G'] {
+  /*background-color: purple;*/
 }
-.card[data-card='H'] {
-  background-color: brown;
+.card.flip[data-card='H'] {
+  /*background-color: brown;*/
 }
 
 .button {
@@ -63,6 +71,10 @@ background-color: salmon;
 	-webkit-animation: flip-in-ver-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 	        animation: flip-in-ver-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
           background-color: darkTurquoise;
+}
+
+.flip p {
+  opacity: 1;
 }
 @-webkit-keyframes flip-in-ver-right {
   0% {

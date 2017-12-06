@@ -17,49 +17,71 @@ let letterArray = [
   'G',
   'H',
 ];
+//Shuffla arrayen
+//Använd const letter isf random index
 
-const memoryArray = letterArray.concat(letterArray);
-let cardsflippedover = 0;
-fliparray = new Array();
+let memoryArray = letterArray.concat(letterArray);
+memoryArray = shuffle(memoryArray);
+
+const paragraphs = document.querySelector('p')
+let cardsFlipped = [];
 
 function newGame(){
   for (var i = 0; i <= ((memoryArray.length)-1); i++) {
-  const card = document.createElement("div");
-  card.setAttribute("class", "card"); //Style div
-  var randomLetter = Math.floor(Math.random() * memoryArray.length);
-  card.setAttribute("data-card", memoryArray[randomLetter]); //i%8 modulus
-  card.innerText = memoryArray[randomLetter];
-  document.querySelector(".frame").append(card);
+    const letter = memoryArray[i];
+    const card = document.createElement("div");
+    card.classList.add('card'); //Style div
+    card.setAttribute("data-card", letter);
+    card.innerHTML = `<p>${letter}</p>`;
+    document.querySelector(".frame").append(card);
 
-  card.addEventListener('click', (event) => {
-    cardsflippedover++; //Lägger på +1 varje varv
+    card.addEventListener('click', (event) => {
+      cardsFlipped.push(event.target); //Lägger till card i cardflipped-array
+      console.log(event.target.dataset);
+      card.classList.toggle('flip');
 
-    if (cardsflippedover > 2) {
-      cards.forEach(card => {
-        card.classList.remove('flip');
-      });
-      cardsflippedover = 1;
-    }
-    card.classList.toggle('flip');
+      if (cardsFlipped.length === 2) {
+        if (cardsFlipped[0].dataset.card === cardsFlipped[1].dataset.card) {
+          console.log('Match!')
+        }
+      }
 
-    if (cardsflippedover === 2) {
-      let activeCards = document.querySelectorAll('.flip');
+      if (cardsFlipped > 2) { //Om vända kort är större än 2, ta bort klass
+        cards.forEach(card => {
+          card.classList.remove('flip');
+        });
+        cardsFlipped = 1;
+      }
+
+      if (cardsFlipped === 2) {
+        let activeCards = document.querySelectorAll('.flip');
 
         if (activeCards[0].dataset.card === activeCards[1].dataset.card) {
           activeCards.forEach(card => {
             card.remove();
           });
         }
-    }
-    // for (var i = 0; i < 16; i++) {
-    // card.setAttribute("data-card", i%8); //i%8 modulus
-    // document.querySelector(".frame").append(card);
-    // }
+      }
+      // for (var i = 0; i < 16; i++) {
+      // card.setAttribute("data-card", i%8); //i%8 modulus
+      // document.querySelector(".frame").append(card);
+      // }
     })
   }
 }
 newGame();
 const cards = document.querySelector('.card');
+
+
+
+//Shuffle
+function shuffle(a) {
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
 
 
 // memory_array.forEach(function(value, index) {
@@ -74,16 +96,6 @@ const cards = document.querySelector('.card');
 //   });
 // });
 
-// //Shuffle
-// function shuffle(a) {
-//     for (let i = a.length - 1; i > 0; i--) {
-//         const j = Math.floor(Math.random() * (i + 1));
-//         [a[i], a[j]] = [a[j], a[i]];
-//     }
-//     return a;
-// }
-// memoryArray = shuffle(memoryArray);
-// console.log(memoryArray);
 //
 //
 //
