@@ -7,32 +7,35 @@
 //     card.innerText = '1';
 //   })
 // })
-let letterArray = [
-  'A',
-  'B',
-  'C',
-  'D',
-  'E',
-  'F',
-  'G',
-  'H',
+let numbersArray = [
+  '0',
+  '1',
+  '2',
+  '3',
+  '4',
+  '5',
+  '6',
+  '7',
 ];
-//Shuffla arrayen
-//Använd const letter isf random index
 
-let memoryArray = letterArray.concat(letterArray);
-memoryArray = shuffle(memoryArray);
+let memoryArray = numbersArray.concat(numbersArray);
+
 
 const paragraphs = document.querySelector('p')
 let cardsFlipped = [];
 
+let matchedCards = 0;
+
+const cards = document.querySelector('.card');
+
 function newGame(){
+  memoryArray = shuffle(memoryArray);
   for (var i = 0; i <= ((memoryArray.length)-1); i++) {
-    const letter = memoryArray[i];
+    const number = memoryArray[i];
     const card = document.createElement("div");
     card.classList.add('card'); //Style div
-    card.setAttribute("data-card", letter);
-    card.innerHTML = `<p>${letter}</p>`;
+    card.setAttribute("data-id", number);
+    card.innerText = number;
     document.querySelector(".frame").append(card);
 
     card.addEventListener('click', (event) => {
@@ -41,36 +44,47 @@ function newGame(){
       card.classList.toggle('flip');
 
       if (cardsFlipped.length === 2) {
-        if (cardsFlipped[0].dataset.card === cardsFlipped[1].dataset.card) {
+        if (cardsFlipped[0].dataset.id === cardsFlipped[1].dataset.id) {
+          matchedCards++;
+          cardsFlipped[0].classList.add('clicked');
+          cardsFlipped[1].classList.add('clicked');
           console.log('Match!')
+          console.log(matchedCards);
+          cardsFlipped = []
+
+          // if (matchedCards === 8) {
+          //   console.log('Victory!')
+          // }
+        } else {
+
         }
-      }
 
-      if (cardsFlipped > 2) { //Om vända kort är större än 2, ta bort klass
-        cards.forEach(card => {
-          card.classList.remove('flip');
-        });
-        cardsFlipped = 1;
       }
+    })
 
-      if (cardsFlipped === 2) {
-        let activeCards = document.querySelectorAll('.flip');
+      // if (cardsFlipped.length > 2) { //Om vända kort är större än 2, ta bort klass
+      //   cards.forEach(card => {
+      //     card.classList.remove('flip');
+      //   });
+      //   cardsFlipped = 1;
+      // }
 
-        if (activeCards[0].dataset.card === activeCards[1].dataset.card) {
-          activeCards.forEach(card => {
-            card.remove();
-          });
-        }
-      }
+      // if (cardsFlipped === 2) {
+      //   let activeCards = document.querySelectorAll('.flip');
+      //
+      //   if (activeCards[0].dataset.card === activeCards[1].dataset.card) {
+      //     activeCards.forEach(card => {
+      //       card.remove();
+      //     });
+      //   }
+      // }
       // for (var i = 0; i < 16; i++) {
       // card.setAttribute("data-card", i%8); //i%8 modulus
       // document.querySelector(".frame").append(card);
       // }
-    })
   }
 }
 newGame();
-const cards = document.querySelector('.card');
 
 
 
@@ -82,6 +96,18 @@ function shuffle(a) {
   }
   return a;
 }
+
+
+  // memoryArray = shuffle(memoryArray);
+  // console.log(memoryArray);
+  // for (var i = 0; i <= ((memoryArray.length)-1); i++) {
+  //   const number = memoryArray[i];
+  //   let card = document.querySelector(`[data-id="${number}"]`);
+  //   console.log(card);
+  //   card.setAttribute("data-id", number);
+  //   card.innerText = number;
+    // document.querySelector(".frame").append(card);
+
 
 
 // memory_array.forEach(function(value, index) {
