@@ -100,6 +100,19 @@ function shuffle(a) {
   return a;
 }
 
+const button = document.querySelector('button');
+
+button.addEventListener('click', () => {
+
+let card = document.querySelectorAll('.card');
+
+card.forEach(card => {
+  card.remove();
+});
+
+newGame();
+
+})
 
   // memoryArray = shuffle(memoryArray);
   // console.log(memoryArray);
