@@ -52,14 +52,14 @@ function newGame(){
           console.log(matchedCards);
           cardsFlipped = []
 
-          // if (matchedCards === 8) {
-          //   console.log('Victory!')
-          // }
         } else {
           console.log('No match.')
           cardsFlipped[0].classList.remove('flip');
           cardsFlipped[1].classList.remove('flip');
           cardsFlipped = []
+        }
+        if (matchedCards === 8) {
+          console.log('Victory!')
         }
 
       }
