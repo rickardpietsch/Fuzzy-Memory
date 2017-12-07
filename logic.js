@@ -56,7 +56,10 @@ function newGame(){
           //   console.log('Victory!')
           // }
         } else {
-
+          console.log('No match.')
+          cardsFlipped[0].classList.remove('flip');
+          cardsFlipped[1].classList.remove('flip');
+          cardsFlipped = []
         }
 
       }
