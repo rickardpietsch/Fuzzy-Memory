@@ -104,6 +104,8 @@ const button = document.querySelector('button');
 
 button.addEventListener('click', () => {
 
+matchedCards = [];
+
 let card = document.querySelectorAll('.card');
 
 card.forEach(card => {
