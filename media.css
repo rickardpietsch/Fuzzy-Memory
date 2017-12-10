@@ -1,0 +1,23 @@
+@media screen and (min-width: 800px) {
+.frame {
+  max-width: 800px;
+}
+
+.card {
+height: 150px;
+width: 150px;
+margin: 10px;
+  }
+}
+
+@media screen and (max-width: 799px) {
+.frame {
+  max-width: 400px;
+}
+
+.card {
+height: 80px;
+width: 80px;
+margin: 2px;
+  }
+}

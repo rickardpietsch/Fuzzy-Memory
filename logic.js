@@ -28,6 +28,10 @@ let matchedCards = 0;
 
 const cards = document.querySelector('.card');
 
+// var player = document.createElement('audio');
+// player.src = 'mp3/explosion.mp3';
+// player.preload = 'auto';
+
 function newGame(){
   memoryArray = shuffle(memoryArray);
   for (var i = 0; i <= ((memoryArray.length)-1); i++) {
@@ -44,10 +48,14 @@ function newGame(){
       card.classList.toggle('flip');
 
       if (cardsFlipped.length === 2) {
+        // const cards = document.querySelector('.card');
+        // cards.classList.add('hold');
+
         if (cardsFlipped[0].dataset.id === cardsFlipped[1].dataset.id) {
           matchedCards++;
           cardsFlipped[0].classList.add('clicked');
           cardsFlipped[1].classList.add('clicked');
+          // player.play();
           console.log('Match!')
           console.log(matchedCards);
           cardsFlipped = []
@@ -57,7 +65,8 @@ function newGame(){
           setTimeout(function() {
           cardsFlipped[0].classList.remove('flip');
           cardsFlipped[1].classList.remove('flip');
-          cardsFlipped = [] }, 2000);
+          cardsFlipped = []
+          }, 2000);
         }
         if (matchedCards === 8) {
           console.log('Victory!')

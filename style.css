@@ -1,3 +1,5 @@
+@import "media.css";
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -7,8 +9,14 @@ body {
   height: 100vh;
 }
 
-h1 {
+button {
+  background-color: red;
+}
 
+.wrapper h1 {
+  margin: 0;
+  font-size: 5em;
+  color: white;
 }
 
 .wrapper {
@@ -28,22 +36,19 @@ h1 {
   flex-wrap: wrap;
   height: 95%;
   width: 100%;
-  max-width: 800px;
   align-content: center;
   justify-content: center;
 }
 
 .card {
-height: 150px;
-width: 150px;
-margin: 5px 10px;
 text-align: center;
 background-image: url('img/grenade.jpeg');
 background-size: contain;
 display: flex;
 justify-content: center;
 align-items: center;
-font-size: 50px;
+/*font-size: 50px;*/
+border-radius: 5px;
 }
 
 /*.card p {
@@ -87,7 +92,11 @@ font-size: 50px;
   height: auto;
   width: 100%;
   display: flex;
-  justify-content: center
+  justify-content: center;
+}
+
+.hold {
+  pointer-events: none;
 }
 
 .flip.clicked {
@@ -102,9 +111,9 @@ font-size: 50px;
           /*background-color: darkTurquoise;*/
 }
 
-.flip p {
+/*.flip p {
   opacity: 1;
-}
+}*/
 @-webkit-keyframes flip-in-ver-right {
   0% {
     -webkit-transform: rotateY(-80deg);
