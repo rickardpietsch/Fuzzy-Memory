@@ -35,7 +35,7 @@ function newGame(){
     const card = document.createElement("div");
     card.classList.add('card'); //Style div
     card.setAttribute("data-id", number);
-    card.innerText = number;
+    // card.innerText = number;
     document.querySelector(".frame").append(card);
 
     card.addEventListener('click', (event) => {
@@ -54,9 +54,10 @@ function newGame(){
 
         } else {
           console.log('No match.')
+          setTimeout(function() {
           cardsFlipped[0].classList.remove('flip');
           cardsFlipped[1].classList.remove('flip');
-          cardsFlipped = []
+          cardsFlipped = [] }, 2000);
         }
         if (matchedCards === 8) {
           console.log('Victory!')

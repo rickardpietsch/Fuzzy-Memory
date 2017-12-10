@@ -5,25 +5,41 @@
 
 body {
   height: 100vh;
+}
+
+h1 {
 
 }
+
+.wrapper {
+  background-image: url('img/background.jpg');
+  background-size: cover;
+  font-family: gruppo;
+  height: 100%;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
 .frame {
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-  height: 100%;
-  width: 80%;
-  max-width: 900px;
+  height: 95%;
+  width: 100%;
+  max-width: 800px;
   align-content: center;
   justify-content: center;
 }
 
 .card {
-height: 180px;
-width: 180px;
-margin: 5px;
+height: 150px;
+width: 150px;
+margin: 5px 10px;
 text-align: center;
-background-color: salmon;
+background-image: url('img/grenade.jpeg');
+background-size: contain;
 display: flex;
 justify-content: center;
 align-items: center;
@@ -35,28 +51,36 @@ font-size: 50px;
 }*/
 
 .card.flip[data-id='0'] {
-  /*background-color: brown;*/
+  background-image: url('img/arnold.jpg');
+  background-size: cover;
 }
 .card.flip[data-id='1'] {
-  /*background-color: blue;*/
+  background-image: url('img/chuck.jpeg');
+  background-size: cover;
 }
 .card.flip[data-id='2'] {
-  /*background-color: red;*/
+  background-image: url('img/dolf.jpg');
+  background-size: cover;
 }
 .card.flip[data-id='3'] {
-  /*background-color: green;*/
+  background-image: url('img/jackie.jpg');
+  background-size: cover;
 }
 .card.flip[data-id='4'] {
-  /*background-color: yellow;*/
+  background-image: url('img/jeanclaude.jpg');
+  background-size: cover;
 }
 .card.flip[data-id='5'] {
-  /*background-color: pink;*/
+  background-image: url('img/persbrandt.jpg');
+  background-size: cover;
 }
 .card.flip[data-id='6'] {
-  /*background-color: orange;*/
+  background-image: url('img/sly.jpeg');
+  background-size: cover;
 }
 .card.flip[data-id='7'] {
-  /*background-color: purple;*/
+  background-image: url('img/steven.jpg');
+  background-size: cover;
 }
 
 .button {
@@ -68,14 +92,14 @@ font-size: 50px;
 
 .flip.clicked {
   pointer-events: none;
-  background-color: green;
+  /*background-color: green;*/
 }
 
 /* Animations */
 .flip {
 	-webkit-animation: flip-in-ver-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 	        animation: flip-in-ver-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-          background-color: darkTurquoise;
+          /*background-color: darkTurquoise;*/
 }
 
 .flip p {
