@@ -1,23 +1,47 @@
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 700px) {
+.wrapper h1 {
+  margin: 2% 0 0 0;
+  color: white;
+}
+
 .frame {
-  max-width: 800px;
+  max-width: 700px;
+  margin: 3% auto;
 }
 
 .card {
-height: 150px;
-width: 150px;
-margin: 10px;
-  }
+  height: 130px;
+  width: 130px;
+  margin: 10px;
 }
 
-@media screen and (max-width: 799px) {
+.button {
+  height: 5%;
+  width: 10%;
+  margin-bottom: 2%;
+}
+}
+
+@media screen and (max-width: 699px) {
+.wrapper h1 {
+  margin: 5% 0 0 0;
+  color: black;
+}
+
 .frame {
   max-width: 400px;
+  margin: 10% auto 0;
 }
 
 .card {
-height: 80px;
-width: 80px;
-margin: 2px;
-  }
+  height: 80px;
+  width: 80px;
+  margin: 2px;
+}
+
+.button {
+  height: 10%;
+  width: 30%;
+  margin-bottom: 10%;
+}
 }

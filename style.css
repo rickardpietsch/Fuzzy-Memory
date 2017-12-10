@@ -1,60 +1,6 @@
 @import "media.css";
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-}
-
-body {
-  height: 100vh;
-}
-
-button {
-  background-color: red;
-}
-
-.wrapper h1 {
-  margin: 0;
-  font-size: 5em;
-  color: white;
-}
-
-.wrapper {
-  background-image: url('img/background.jpg');
-  background-size: cover;
-  font-family: gruppo;
-  height: 100%;
-  width: auto;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-}
-
-.frame {
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  height: 95%;
-  width: 100%;
-  align-content: center;
-  justify-content: center;
-}
-
-.card {
-text-align: center;
-background-image: url('img/grenade.jpeg');
-background-size: contain;
-display: flex;
-justify-content: center;
-align-items: center;
-/*font-size: 50px;*/
-border-radius: 5px;
-}
-
-/*.card p {
-  opacity: 0;
-}*/
-
+/* Card ID's*/
 .card.flip[data-id='0'] {
   background-image: url('img/arnold.jpg');
   background-size: cover;
@@ -88,11 +34,57 @@ border-radius: 5px;
   background-size: cover;
 }
 
-.button {
-  height: auto;
+/* Styling */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: gruppo;
+}
+
+body {
+  height: 100vh;
+}
+
+.wrapper h1 {
+  font-size: 5em;
+}
+
+.wrapper {
+  background-image: url('img/background.jpg');
+  background-size: cover;
+  height: 100%;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.frame {
+  display: flex;
+  flex-wrap: wrap;
+  height: 95%;
   width: 100%;
+  justify-content: center;
+  align-content: flex-start;
+}
+
+.card {
+  text-align: center;
+  background-image: url('img/grenade.jpeg');
+  background-size: contain;
   display: flex;
   justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.button {
+  background-color: red;
+  border: none;
+  display: inline-block;
+  font-size: 1.5em;
+  font-weight: 900;
 }
 
 .hold {
@@ -101,19 +93,14 @@ border-radius: 5px;
 
 .flip.clicked {
   pointer-events: none;
-  /*background-color: green;*/
 }
 
 /* Animations */
 .flip {
 	-webkit-animation: flip-in-ver-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 	        animation: flip-in-ver-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-          /*background-color: darkTurquoise;*/
 }
 
-/*.flip p {
-  opacity: 1;
-}*/
 @-webkit-keyframes flip-in-ver-right {
   0% {
     -webkit-transform: rotateY(-80deg);
