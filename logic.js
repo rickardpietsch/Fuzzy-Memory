@@ -1,12 +1,4 @@
-// //
-// // const cardsArray = Array.from(cards);
-// //
-// cards.forEach((card) => {
-//   card.addEventListener('click', (event) => {
-//     card.classList.toggle('flip')
-//     card.innerText = '1';
-//   })
-// })
+
 let numbersArray = [
   '0',
   '1',
@@ -18,15 +10,10 @@ let numbersArray = [
   '7',
 ];
 
-let memoryArray = numbersArray.concat(numbersArray);
-
-
-const paragraphs = document.querySelector('p')
 let cardsFlipped = [];
-
 let matchedCards = 0;
 
-const cards = document.querySelector('.card');
+let memoryArray = numbersArray.concat(numbersArray);
 
 const body = document.querySelector('body');
 
@@ -40,9 +27,8 @@ function newGame(){
   for (var i = 0; i <= ((memoryArray.length)-1); i++) {
     const number = memoryArray[i];
     const card = document.createElement("div");
-    card.classList.add('card'); //Style div
+    card.classList.add('card');
     card.setAttribute("data-id", number);
-    // card.innerText = number;
     document.querySelector(".frame").append(card);
 
     card.addEventListener('click', (event) => {
@@ -58,7 +44,6 @@ function newGame(){
           matchedCards++;
           cardsFlipped[0].classList.add('clicked');
           cardsFlipped[1].classList.add('clicked');
-          player.play();
           console.log('Match!')
           console.log(matchedCards);
           cardsFlipped = []
@@ -74,6 +59,7 @@ function newGame(){
           }, 2000);
         }
         if (matchedCards === 8) {
+          player.play();
           console.log('Victory!')
         }
 
