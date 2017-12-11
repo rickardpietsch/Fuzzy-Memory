@@ -28,10 +28,12 @@ let matchedCards = 0;
 
 const cards = document.querySelector('.card');
 
+const body = document.querySelector('body');
 
-// player.src = 'mp3/explosion.mp3';
-// player.preload = 'auto';
-// body.appendChild(player);
+var player = document.createElement('audio');
+player.src = 'mp3/explosion.mp3';
+player.preload = 'auto';
+body.appendChild(player);
 
 function newGame(){
   memoryArray = shuffle(memoryArray);
@@ -56,7 +58,7 @@ function newGame(){
           matchedCards++;
           cardsFlipped[0].classList.add('clicked');
           cardsFlipped[1].classList.add('clicked');
-          // player.play();
+          player.play();
           console.log('Match!')
           console.log(matchedCards);
           cardsFlipped = []
