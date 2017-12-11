@@ -85,6 +85,11 @@ body {
   display: inline-block;
   font-size: 1.5em;
   font-weight: 900;
+  cursor: pointer;
+}
+
+.button:active {
+  transform: translateY(2px);
 }
 
 .hold {
