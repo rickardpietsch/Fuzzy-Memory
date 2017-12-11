@@ -1,3 +1,4 @@
+/* Desktop */
 @media screen and (min-width: 700px) {
 .wrapper h1 {
   margin: 2% 0 0 0;
@@ -22,6 +23,7 @@
 }
 }
 
+/* Mobile */
 @media screen and (max-width: 699px) {
 .wrapper h1 {
   margin: 5% 0 0 0;
