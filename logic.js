@@ -63,7 +63,7 @@ function newGame(){
           }, 2000);
         }
         /* Logic game won */
-        if (matchedCards === 1) {
+        if (matchedCards === 8) {
           winner.classList.add('visible');
           player.play();
           console.log('Victory!')
