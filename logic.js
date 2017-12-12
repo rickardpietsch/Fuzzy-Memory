@@ -63,7 +63,8 @@ function newGame(){
           }, 2000);
         }
         /* Logic game won */
-        if (matchedCards === 8) {
+        if (matchedCards === 1) {
+          winner.classList.add('visible');
           player.play();
           console.log('Victory!')
         }
@@ -82,6 +83,7 @@ function shuffle(a) {
   return a;
 }
 
+/* Reset game */
 const button = document.querySelector('button');
 
 button.addEventListener('click', () => {
@@ -91,5 +93,6 @@ let card = document.querySelectorAll('.card');
 card.forEach(card => {
   card.remove();
 });
+winner.classList.remove('visible');
 newGame();
 })

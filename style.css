@@ -80,19 +80,24 @@ body {
 }
 
 .winner {
+  display: none;
+}
+
+.visible {
+  display: block;
+  position: absolute;
   background-color: black;
   color: white;
   border-radius: 10px;
-  opacity: 1;
 }
 
 .button {
   background-color: red;
   border: none;
-  display: inline-block;
   font-size: 1.5em;
   font-weight: 900;
   cursor: pointer;
+  padding: 0.5em;
 }
 
 .button:active {
