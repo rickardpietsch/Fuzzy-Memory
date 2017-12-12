@@ -16,6 +16,8 @@ let memoryArray = numbersArray.concat(numbersArray);
 
 const body = document.querySelector('body');
 
+const winner = document.querySelector('.winner');
+
 /* Import audio file */
 var player = document.createElement('audio');
 player.src = 'mp3/explosion.mp3';
@@ -45,8 +47,6 @@ function newGame(){
         /* Logic for matching cards */
         if (cardsFlipped[0].dataset.id === cardsFlipped[1].dataset.id) {
           matchedCards++;
-          cardsFlipped[0].classList.add('clicked');
-          cardsFlipped[1].classList.add('clicked');
           console.log('Match!')
           console.log(matchedCards);
           cardsFlipped = []
